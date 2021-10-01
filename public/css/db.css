@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+}
+
+li{
+    color: white;
+    padding: 0.5em;
+    margin-bottom:0.5em;
+    list-style-type: none;
+}

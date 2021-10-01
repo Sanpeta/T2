@@ -1,0 +1,36 @@
+<%- include("./partials/header")  %>
+
+<style>
+    #list-online {
+        max-height: 500px;
+        min-height: 500px;
+        background-color: aquamarine;
+        overflow-y: scroll;
+    }
+</style>
+<body style="background-color: black;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 bg-info p-3 rounded my-3">
+
+                    <h1>Alterar Informação do Produto</h1>
+                    <br>                        
+                    <form action="/editProduct" method="POST">
+                        <input class="form-control" type="text" id="name" name="name" placeholder="Nome do Produto" value="<%= product.name %>">
+                        <br>
+                        <input class="form-control" type="number" step=".01" id="price" name="price" placeholder="Preço do Produto" value="<%= product.price %>">
+                        <br>
+                        <input class="form-control" type="url" id="image" name="image" placeholder="Link da Imagem do Produto" value="<%= product.image %>">
+                        <br>
+                        <button type="submit" class="btn btn-primary">Alterar</button>
+                    </form>
+                    <br>
+                    
+            </div>
+        </div>
+    </div>
+</body>
+
+<%- include("./partials/footer")  %>
+
+</html>

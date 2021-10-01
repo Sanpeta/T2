@@ -1,0 +1,44 @@
+<%- include("./partials/header")  %>
+
+<style>
+    #list-online {
+        max-height: 500px;
+        min-height: 500px;
+        background-color: aquamarine;
+        overflow-y: scroll;
+    }
+</style>
+<body style="background-color: black;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6 bg-info p-3 rounded my-3">
+
+                <div id="list-invites">
+                    <% products.forEach(product => { %>
+                    <div class="form-check">
+                        <a href="http://54.233.110.7:4000/product/<%= product.name %>" target="link" rel="noopener noreferrer" style="cursor: pointer">
+                            <label class="form-check-label p-2">
+                                <%= product.name %>
+                                <br>
+                                R$ <%= product.price %>
+                                <br>
+                                <img src="<%= product.image %>" height="200px" width="200px" alt="">
+                            </label>
+                        </a>
+                        <form action="/removeProduct" method="POST">
+                            <input type="hidden" id="name" name="name" value="<%= product.name %>">
+                            <button type="submit">Remover</button>
+                        </form>
+                    </div>
+                    <br>
+                    <% }) %>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+</body>
+
+<%- include("./partials/footer")  %>
+
+</html>
